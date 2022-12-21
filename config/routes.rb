@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  get 'index' to:, 'users#index'
-  post 'add_record' to, 'users#create'
+  get 'index', to: 'users#index'
+  post 'add_record', to 'users#create'
   delete 'delete_record', to: 'users#destroy'
 end
