@@ -1,16 +1,18 @@
 import React from "react";
-import stock from "../images/stock.png";
-import StepBackwardOutlined from "@ant-design/icons/StepBackwardOutlined";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
+import AddNew from "./AddNew";
 
 function App() {
   return (
-    <div>
-      <div className="font-bold underline mt-2 text-slate-500">App</div>
-      <img src={stock} alt="logo" className="h-21 w-1/2 mt-17" />
-      <div className="mt-16">
-        <StepBackwardOutlined style={{ fontSize: "250%" }} />
-      </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/index" element={<Dashboard />} />
+        <Route path="/add_record" element={<AddNew />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
